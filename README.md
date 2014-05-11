@@ -2,7 +2,7 @@ ng-tether
 =========
 
 Tether wrapper for Angular, so you can use it in directives declaratively. **Tether is included**
-Not to be mistaken for a very cool project called [`angular-tether`](https://github.com/nissoh/angular-tether) that is in the process of Tether in angular.
+Not to be mistaken for a very cool project called [`angular-tether`](https://github.com/nissoh/angular-tether) that is in the process of implementing Tether in angular.
 
 # Usage
 
