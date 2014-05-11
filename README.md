@@ -23,8 +23,8 @@ or
 
 # Building
 
-`npm run deps` to get the dependencies
-`npm run dist` to build
-`npm run watch` to continuously build
+`npm run deps` to get the dependencies  
+`npm run dist` to build  
+`npm run watch` to continuously build   
 
 I've never been to the Empire State building
