@@ -5,9 +5,11 @@
   "main": "ng-tether.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "getDeps": "npm install && bower install",
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js --watch"
+    "deps": "npm install && bower install",
+    "build": "webpack --config webpack.config.js ng-tether.coffee ng-tether.js",
+    "build-min": "webpack --optimize-minimize --config webpack.config.js ng-tether.coffee ng-tether.min.js",
+    "dist": "npm run build & npm run build-min",
+    "watch": "webpack --config webpack.config.js --watch ng-tether.coffee ng-tether.js"
   },
   "author": "Jeff Ling <jeff@bench.co>",
   "license": "MIT",
