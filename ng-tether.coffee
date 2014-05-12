@@ -28,7 +28,6 @@ ngTetherDire = () ->
     if not tetherOptions.element?
       tetherOptions.element = element[0]
 
-    console.log tetherOptions
     tetherHandle = new Tether tetherOptions
 
     tetherHandle.position() # initial reposition
