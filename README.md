@@ -7,11 +7,7 @@ Not to be mistaken for a very cool project called [`angular-tether`](https://git
 
 # Install
 
-`bower install ng-tether`
-
-or 
-
-`npm install ng-tether`
+`bower install ng-tether` or `npm install ng-tether`
 
 # Usage
 
@@ -20,30 +16,36 @@ or
     target: '.target',
     attachment: 'top left',
     targetAttachment: 'top right'
-}" class="element"></div>
+}"></div>
 ```
 
 or
 
 ```html
-<div ng-tether ng-tether-target=".target" ng-tether-attachment="top left"
- ng-tether-target-attachment="top right" class="element"></div>
+<div ng-tether 
+ ng-tether-target=".target" 
+ ng-tether-attachment="top left"
+ ng-tether-target-attachment="top right"></div>
 ```
 
 You can grab a reference to the Tether object if you want by passing a string into `ng-tether`. 
 
 ```html
-<div ng-tether="ngTetherReference" ng-tether-target=".target" ng-tether-attachment="top left"
- ng-tether-target-attachment="top right" class="element"></div>
+<div ng-tether="ngTetherReference" 
+ ng-tether-target=".target" 
+ ng-tether-attachment="top left"
+ ng-tether-target-attachment="top right"></div>
 ```
 
 `ngTetherReference` will now be in `$scope`. You can do things like
 
 ```html
-<div ng-click="ngTetherReference.destroy()"></div>
+<div ng-click="ngTetherReference.destroy()">kind of a button</div>
 ```
 
-To destroy it (that's probably what that function does maybe). 
+To destroy it. 
+
+You can see the [Tether docs](http://tether.io) for a full list of options and api functions. 
 
 
 # Building
