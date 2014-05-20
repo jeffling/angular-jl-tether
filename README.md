@@ -5,6 +5,14 @@ ng-tether
 
 Not to be mistaken for a very cool project called [`angular-tether`](https://github.com/nissoh/angular-tether) that is in the process of implementing Tether in angular.
 
+# Install
+
+`bower install ng-tether`
+
+or 
+
+`npm install ng-tether`
+
 # Usage
 
 ```html
