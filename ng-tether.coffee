@@ -12,7 +12,6 @@ ngTetherDire = () ->
   link: (scope, element, attrs) ->
     tetherOptions = {}
 
-    console.log attrs
     # pluck out relevant keys from the attributes and remove prefix
     for own key, value of attrs
       if key isnt prefix and (key.indexOf prefix) isnt -1
