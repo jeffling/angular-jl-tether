@@ -9,44 +9,43 @@
 	}
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
-/******/ 	
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/ 		
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-/******/ 		
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 		
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/ 		
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
-/******/ 	
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-/******/ 	
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/ 	
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-/******/ 	
-/******/ 	
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -59,12 +58,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	/*
 	  AngularJS wrapper for HubSpots's Tether
 	 */
-	var Tether, ngTetherDire, prefix,
-	  __hasProp = {}.hasOwnProperty;
+	var Tether, ngTetherDire, optionsToEval, prefix,
+	  __hasProp = {}.hasOwnProperty,
+	  __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 	Tether = __webpack_require__(1);
 
 	prefix = 'ngTether';
+
+	optionsToEval = ['constraints'];
 
 	ngTetherDire = function() {
 	  return {
@@ -72,13 +74,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    link: function(scope, element, attrs) {
 	      var evaledOptions, key, optionKey, strippedKey, tetherHandle, tetherOptions, value;
 	      tetherOptions = {};
+	      console.log(attrs);
 	      for (key in attrs) {
 	        if (!__hasProp.call(attrs, key)) continue;
 	        value = attrs[key];
 	        if (key !== prefix && (key.indexOf(prefix)) !== -1) {
 	          strippedKey = key.replace(prefix, '');
 	          optionKey = strippedKey[0].toLowerCase() + strippedKey.slice(1);
-	          tetherOptions[optionKey] = value;
+	          if (__indexOf.call(optionsToEval, optionKey) >= 0) {
+	            tetherOptions[optionKey] = scope.$eval(value);
+	          } else {
+	            tetherOptions[optionKey] = value;
+	          }
 	        }
 	      }
 	      if (tetherOptions.options != null) {
@@ -93,7 +100,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      if (tetherOptions.element == null) {
 	        tetherOptions.element = element[0];
 	      }
-	      console.log(tetherOptions);
 	      tetherHandle = new Tether(tetherOptions);
 	      tetherHandle.position();
 	      if (attrs[prefix] != null) {

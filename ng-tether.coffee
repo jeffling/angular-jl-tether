@@ -3,21 +3,28 @@
 ###
 
 Tether = require 'tether'
+
 prefix = 'ngTether'
+optionsToEval = ['constraints'] # these tether options aren't mere strings
 
 ngTetherDire = () ->
   restrict: 'A'
   link: (scope, element, attrs) ->
     tetherOptions = {}
 
+    console.log attrs
     # pluck out relevant keys from the attributes and remove prefix
     for own key, value of attrs
       if key isnt prefix and (key.indexOf prefix) isnt -1
         strippedKey = key.replace prefix, ''
         optionKey = strippedKey[0].toLowerCase() + strippedKey.slice 1
-        tetherOptions[optionKey] = value
 
-    # extract out 'tetherOptions' attribute and merge to top level
+        if optionKey in optionsToEval
+          tetherOptions[optionKey] = scope.$eval value
+        else
+          tetherOptions[optionKey] = value
+
+    # extract out 'tetherOptions' attribute and merge to our options object
     if tetherOptions.options?
       evaledOptions = (scope.$eval tetherOptions.options) || {}
       delete tetherOptions.options
