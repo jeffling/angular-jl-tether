@@ -12,6 +12,8 @@ Not to be mistaken for a very cool project called [`angular-tether`](https://git
 
 # Usage
 
+Include `jlTether` as an angular module dependency, then
+
 ```html
 <div jl-tether jl-tether-options="{
     target: '.target',
@@ -41,7 +43,7 @@ You can grab a reference to the Tether object if you want by passing a string in
 `ngTetherReference` will now be in `$scope`. You can do things like
 
 ```html
-<div jl-click="ngTetherReference.destroy()">kind of a button</div>
+<div ng-click="ngTetherReference.destroy()">kind of a button</div>
 ```
 
 To destroy it. 
