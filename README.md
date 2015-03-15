@@ -1,4 +1,5 @@
-ng-tether
+
+jl-tether (formerly ng-tether)
 =========
 
 [Tether](http://tether.io) wrapper for Angular, so you can use it in directives declaratively. **Tether is included**
@@ -7,12 +8,12 @@ Not to be mistaken for a very cool project called [`angular-tether`](https://git
 
 # Install
 
-`bower install ng-tether` or `npm install ng-tether`
+`bower install jl-tether` or `npm install jl-tether`
 
 # Usage
 
 ```html
-<div ng-tether ng-tether-options="{
+<div jl-tether jl-tether-options="{
     target: '.target',
     attachment: 'top left',
     targetAttachment: 'top right'
@@ -22,25 +23,25 @@ Not to be mistaken for a very cool project called [`angular-tether`](https://git
 or
 
 ```html
-<div ng-tether 
- ng-tether-target=".target" 
- ng-tether-attachment="top left"
- ng-tether-target-attachment="top right"></div>
+<div jl-tether 
+ jl-tether-target=".target" 
+ jl-tether-attachment="top left"
+ jl-tether-target-attachment="top right"></div>
 ```
 
-You can grab a reference to the Tether object if you want by passing a string into `ng-tether`. 
+You can grab a reference to the Tether object if you want by passing a string into `jl-tether`. 
 
 ```html
-<div ng-tether="ngTetherReference" 
- ng-tether-target=".target" 
- ng-tether-attachment="top left"
- ng-tether-target-attachment="top right"></div>
+<div jl-tether="ngTetherReference" 
+ jl-tether-target=".target" 
+ jl-tether-attachment="top left"
+ jl-tether-target-attachment="top right"></div>
 ```
 
 `ngTetherReference` will now be in `$scope`. You can do things like
 
 ```html
-<div ng-click="ngTetherReference.destroy()">kind of a button</div>
+<div jl-click="ngTetherReference.destroy()">kind of a button</div>
 ```
 
 To destroy it. 
@@ -54,4 +55,3 @@ You can see the [Tether docs](http://tether.io) for a full list of options and a
 `npm run dist` to build  
 `npm run watch` to continuously build   
 
-I've never been to the Empire State building

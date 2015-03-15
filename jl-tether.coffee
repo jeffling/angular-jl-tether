@@ -4,10 +4,10 @@
 
 Tether = require 'tether'
 
-prefix = 'ngTether'
+prefix = 'jlTether'
 optionsToEval = ['constraints'] # these tether options aren't mere strings
 
-ngTetherDire = () ->
+jlTetherDire = () ->
   restrict: 'A'
   link: (scope, element, attrs) ->
     tetherOptions = {}
@@ -42,5 +42,5 @@ ngTetherDire = () ->
     if attrs[prefix]?
       scope[attrs[prefix]] = tetherHandle
 
-module.exports = angular.module 'ngTether', []
-.directive prefix, ngTetherDire
+module.exports = angular.module 'jlTether', []
+.directive prefix, jlTetherDire

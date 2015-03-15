@@ -3,7 +3,7 @@ webpack = require('webpack');
 
 module.exports = {
   cache: true,
-  entry: 'ng-tether.coffee',
+  entry: 'jl-tether.coffee',
   output: {
     libraryTarget: 'umd',
   },

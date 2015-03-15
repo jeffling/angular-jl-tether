@@ -9,11 +9,11 @@
     <body ng-app="app">
         <div class="instructions">Resize the page to see the Tether flip.</div>
 
-        <div ng-tether
-            ng-tether-target = ".target",
-            ng-tether-attachment = "top left",
-            ng-tether-target-attachment = "top right",
-            ng-tether-constraints = "[{
+        <div jl-tether
+            jl-tether-target = ".target",
+            jl-tether-attachment = "top left",
+            jl-tether-target-attachment = "top right",
+            jl-tether-constraints = "[{
                 to: 'window',
                 attachment: 'together'
             }]"
@@ -21,9 +21,9 @@
         <div class="target"></div>
 
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-        <script src="../ng-tether.js"></script>
+        <script src="../jl-tether.js"></script>
         <script type="text/javascript" charset="utf-8">
-            angular.module('app', ['ngTether']);
+            angular.module('app', ['jlTether']);
         </script>
     </body>
 </html>

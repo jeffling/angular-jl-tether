@@ -58,23 +58,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	/*
 	  AngularJS wrapper for HubSpots's Tether
 	 */
-	var Tether, ngTetherDire, optionsToEval, prefix,
+	var Tether, jlTetherDire, optionsToEval, prefix,
 	  __hasProp = {}.hasOwnProperty,
 	  __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
 	Tether = __webpack_require__(1);
 
-	prefix = 'ngTether';
+	prefix = 'jlTether';
 
 	optionsToEval = ['constraints'];
 
-	ngTetherDire = function() {
+	jlTetherDire = function() {
 	  return {
 	    restrict: 'A',
 	    link: function(scope, element, attrs) {
 	      var evaledOptions, key, optionKey, strippedKey, tetherHandle, tetherOptions, value;
 	      tetherOptions = {};
-	      console.log(attrs);
 	      for (key in attrs) {
 	        if (!__hasProp.call(attrs, key)) continue;
 	        value = attrs[key];
@@ -109,7 +108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	};
 
-	module.exports = angular.module('ngTether', []).directive(prefix, ngTetherDire);
+	module.exports = angular.module('jlTether', []).directive(prefix, jlTetherDire);
 
 
 /***/ },
