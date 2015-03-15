@@ -1,5 +1,5 @@
 {
-  "name": "jl-tether",
+  "name": "angular-jl-tether",
   "version": "0.1.0",
   "description": "Tether wrapper for Angular, so you can use it in directives declaratively",
   "main": "jl-tether.js",
