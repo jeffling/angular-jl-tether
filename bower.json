@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "homepage": "https://github.com/jeffling/ng-tether",
   "authors": [
-    "Jeff Ling <jeff@bench.co>"
+    "Jeff Ling <jeff.ummu@gmail.com>"
   ],
   "description": "Tether wrapper for Angular, so you can use it in directives declaratively. Not to be mistaken by a very cool project called [`angular-tether`](https://github.com/nissoh/angular-tether) that is reimplementing Tether in angular.",
-  "main": "ng-tether.js",
+  "main": "jl-tether.js",
   "keywords": [
     "tether",
     "hubspot",
